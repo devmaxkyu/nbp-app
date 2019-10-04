@@ -6,9 +6,9 @@
 
 import { combineReducers } from 'redux'
 
-import CurrencyDetailReducer from '../scenes/CurrencyDetail/reducer'
-import CurrencyListReducer from '../scenes/CurrencyList/reducer'
-import FavouriteReducer from '../scenes/Favourite/reducer'
+import CurrencyDetailReducer from '../pages/CurrencyDetail/reducer'
+import CurrencyListReducer from '../pages/CurrencyList/reducer'
+import FavouriteReducer from '../pages/Favourite/reducer'
 
 export default combineReducers({
     CurrencyDetailReducer,

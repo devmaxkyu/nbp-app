@@ -1,6 +1,6 @@
 /** 
  * @author Zemin W.
- * @description define reducers to refresh and filter currencies list
+ * @description define reducers to add and remove favourite currencies
  * @lastModified 2019.10.4
  * */
 import {createReducer} from 'redux-create-reducer'

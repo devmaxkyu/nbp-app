@@ -1,6 +1,6 @@
 /** 
  * @author Zemin W.
- * @description define actions to add a currency to currencies list 
+ * @description define actions to add details of currency
  * @lastModified 2019.10.4
  * */
 

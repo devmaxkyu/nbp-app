@@ -11,11 +11,11 @@ import logo from './logo.svg';
 class Header extends React.Component {
     render() {
         return (
-            <div class="header">
+            <div class="App-header">
                 <a href="/" class="logo">
                     <img src={logo} className="App-logo" alt="logo" />                   
                 </a>
-                <div class="header-right">
+                <div class="App-header-right">
                     <a class="active" href="/">Currency List</a>
                     <a class="link" href="/favourite">Favourite</a>                    
                 </div>

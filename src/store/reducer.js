@@ -11,7 +11,7 @@ import CurrencyListReducer from '../pages/CurrencyList/reducer'
 import FavouriteReducer from '../pages/Favourite/reducer'
 
 export default combineReducers({
-    CurrencyDetailReducer,
-    CurrencyListReducer,
-    FavouriteReducer
+    currencyDetail: CurrencyDetailReducer,
+    currencyList: CurrencyListReducer,
+    favourite: FavouriteReducer
 })

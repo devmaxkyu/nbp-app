@@ -10,7 +10,7 @@ import React from 'react'
 class Table extends React.Component {
 
     render() {
-        const { items } = this.props
+        const { items, table } = this.props
 
         return (
             <table className="App-table">
@@ -22,8 +22,8 @@ class Table extends React.Component {
                 {items && items.length ? items.map((item, index) => {
                         return (
                             <tr id={item.code}>                                    
-                                <td>{item.currency}</td>
-                                <td>{item.value}</td>
+                                <td><a href={`currency/${table}/${item.code}`} >{item.currency}</a></td>
+                                <td>{item.mid}</td>
                             </tr>
                         );
                     })

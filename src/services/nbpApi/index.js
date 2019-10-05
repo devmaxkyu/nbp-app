@@ -7,7 +7,13 @@
 const apiBaseUrl = 'http://api.nbp.pl/api/exchangerates/'
 
 const ajaxRequest = (url, callback, method = 'get') =>{
-    fetch(url).then(res => res.json())
+    fetch(url, {
+        method: method, 
+        headers:{ 
+            'Accept': 'application/json', 
+            
+        }
+    }).then(res => res.json())
     .then(
         (result) => {
             callback(result)

@@ -12,7 +12,9 @@
   width: 60%;
 }
 
-
+.App-logo{
+  flex:1;
+}
 
 .App-loader {
   background-color: white;
@@ -29,7 +31,7 @@
   height: 40vmin;
 }
 
-.App-logo {
+.App-logo-img {
   height: 10vmin;
 }
 
@@ -37,6 +39,8 @@
 
 /* Style the App-header with a grey background and some padding */
 .App-header {
+  display:flex;
+  flex-direction: column;
   overflow: hidden;
   padding: 20px 10px;
 }
@@ -61,7 +65,17 @@ ul.App-nav li{
     margin: 5px;
 }
 
+ul.App-nav {
+  padding: 0;
+}
+
 .App-link:hover {
+  background-color: #4CAF50;
+  color:white;
+}
+
+
+.App-link.active {
   background-color: #4CAF50;
   color:white;
 }
@@ -75,10 +89,13 @@ ul.App-nav li{
 
 
 
-
+.table-wrap {
+  margin: 10px 0;
+}
 
 /* Float the link section to the right */
 .App-header-right {
+  flex:1;
   float: right;
 }
 
@@ -87,6 +104,7 @@ ul.App-nav li{
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  border: 3px solid #f0f1f0;
 }
 
 .App-table td, .App-table th {
@@ -151,6 +169,34 @@ ul.App-nav li{
   font-size: 16px;
 }
 
+.App-btn-group{
+  text-align: left;
+  padding: 10px 0px;
+}
+
+/* detail page css */
+.App-detail h4{
+  margin:0;
+  padding: 0;
+  
+}
+
+.App-detail p{
+  color:grey;
+  margin:0;
+  padding:0;
+  font-size: .8em;
+}
+.App-detail span{
+  font-size: .85em;
+  padding:0px 5px;
+}
+.App-detail span.label{
+  color:green;
+}
+.App-detail div.attr {
+  margin: 20px 0px;
+}
 
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */

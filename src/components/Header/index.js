@@ -14,9 +14,12 @@ class Header extends React.Component {
     render() {
         return (
             <div class="App-header">
-                <a href="/" class="logo">
-                    <img src={logo} className="App-logo" alt="logo" />                   
-                </a>
+                <div className="App-logo">
+                    <Link to="/">
+                        <img src={logo} className="App-logo-img" alt="logo" />                   
+                    </Link>
+                </div>
+                <h2>Frontend Practical Assignment</h2>
                 <div class="App-header-right">
                     <ul className="App-nav">
                         <li>

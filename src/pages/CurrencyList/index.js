@@ -49,13 +49,13 @@ class CurrencyList extends React.Component {
         
         return (
             <div>
-                <h2>Currency List</h2>
+                <h3>Currency List</h3>
                 <div className="btn-group">
                     
-                        <button className={this.state.table==TABLE_FORMAT.A?"App-btn-active":""} name="table_A" onClick={this.handleTableA}>
+                        <button className={"App-link "+(this.state.table==TABLE_FORMAT.A?"active":"")} name="table_A" onClick={this.handleTableA}>
                             Table {TABLE_FORMAT.A}                                                        
                         </button>
-                        <button className={this.state.table==TABLE_FORMAT.B?"App-btn-active":""} name="table_B" onClick={this.handleTableB}>
+                        <button className={"App-link "+(this.state.table==TABLE_FORMAT.B?"active":"")} name="table_B" onClick={this.handleTableB}>
                             Table {TABLE_FORMAT.B}                                                        
                         </button>
                         {/* <button className={this.state.table==TABLE_FORMAT.C?"":"App-btn App-btn-active"} name="table_C" onClick={this.handleTableC}>
@@ -63,7 +63,10 @@ class CurrencyList extends React.Component {
                         </button> */}
                     
                 </div>                
-                <Table items = {this.props.currencies} table = {this.state.table} />
+                <div className="table-wrap">
+                    <Table items = {this.props.currencies} table = {this.state.table} />
+                </div>
+                
             </div>
         )
     }

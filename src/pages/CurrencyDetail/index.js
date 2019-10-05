@@ -72,18 +72,27 @@ class CurrencyDetail extends React.Component {
         }            
         
         return (
-            <div>
+            <div className="App-detail">
                 <div>
-                    <p>{detail.currency}</p>
+                    <h4>{detail.currency}</h4>
                     <p><small>{detail.code}</small></p>
-                    <dl>
-                        <dt>Effective Date</dt>
-                        <dd>{detail.rates[0].effectiveDate}</dd>
-                        <dt>Number</dt>
-                        <dd>{detail.rates[0].no}</dd>
-                        <dt>Rate</dt>
-                        <dd>{detail.rates[0].mid}</dd>
-                    </dl>
+
+                    <div className="attr">
+                        <div>
+                            <span className="label">Effective Date</span>
+                            <span>{detail.rates[0].effectiveDate}</span>                        
+                        </div>
+                        <div>
+                            <span className="label">Number</span>
+                            <span>{detail.rates[0].no}</span>                        
+                        </div>
+                        <div>                        
+                            <span className="label">Rate</span>
+                            <span>{detail.rates[0].mid}</span>
+                        </div>
+                    </div>
+                    
+                    
                 </div>
                 {isFavourite?(
                     <div>

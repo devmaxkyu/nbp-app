@@ -21,13 +21,16 @@ class Favourite extends React.Component {
 
         return (
             <div>
-                <h2>Favourite List</h2>
-                <div>
+                <h3>Favourite List</h3>
+                <div className="App-btn-group">
                         <a className={"App-link"} href="#" onClick={this.handleRemove}>
                             All Remove Favourite                                                        
                         </a>
                 </div>
+                <div className="table-wrap">
                 <FavouriteTalbe items = {favourite.list} />
+                </div>
+                
             </div>
         )
     }

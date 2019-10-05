@@ -1,16 +1,16 @@
 /** 
  * @author Zemin W.
- * @description define actions to add details of currency
+ * @description define actions to set details of currency into store
  * @lastModified 2019.10.4
  * */
 
-const ADD = 'CURRENCY_ADD';
+const SET = 'CURRENCY_SET';
 
 export const actions = {
-    ADD
+    SET
 }
 
-export const add = data =>({
-    type: ADD,
+export const setCurrencyDetail = data =>({
+    type: SET,
     data
 })

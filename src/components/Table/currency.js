@@ -1,11 +1,12 @@
 /** 
- * @description page component to render table with data
+ * @description page component to render table with currency list data
  * @lastModified 2019.10.5
  * @author zemin
  * */
 
 import React from 'react'
 
+import { Link } from 'react-router-dom'
 
 class Table extends React.Component {
 
@@ -22,7 +23,7 @@ class Table extends React.Component {
                 {items && items.length ? items.map((item, index) => {
                         return (
                             <tr id={item.code}>                                    
-                                <td><a href={`currency/${table}/${item.code}`} >{item.currency}</a></td>
+                                <td><Link to={`currency/${table}/${item.code}`} >{item.currency}</Link></td>
                                 <td>{item.mid}</td>
                             </tr>
                         );

@@ -10,12 +10,22 @@ import {getCurrencyDetail,TABLE_FORMAT} from '../../services/nbpApi'
 import PropTypes from 'prop-types'
 import {setCurrencyDetail} from './actions'
 import {addFavourite, removeFavourite} from '../Favourite/actions'
-
+import { ENGINE_METHOD_NONE } from 'constants'
+import {Link} from 'react-router-dom'
 
 class CurrencyDetail extends React.Component {
-  
+    constructor(props){
+        super(props)
+
+        this.state = {loaded:false}
+    }
 
     componentDidMount(){
+
+        // this.state.setState({
+        //     detail:null,            
+        // })
+
         const {             
             match:{params:{code, table}}            
         } = this.props
@@ -25,8 +35,9 @@ class CurrencyDetail extends React.Component {
     }
 
     setCurrency = (result) => {
-        const {dispatch} = this.props
+        const {dispatch, currency} = this.props
         dispatch(setCurrencyDetail(result))
+        this.setState({loaded: true})
     }
 
     // handler to add currency to favourite when user click button
@@ -42,11 +53,11 @@ class CurrencyDetail extends React.Component {
     }
 
     render() {
-        const {currency: detail, favourite: {list: favouriteList}} = this.props
+        const {currency: detail,favourite: {list: favouriteList}} = this.props
 
         var isFavourite = false
 
-        if(!detail){
+        if(!this.state.loaded){
             return (<p>no detail data</p>)
         }
 
@@ -84,6 +95,10 @@ class CurrencyDetail extends React.Component {
                         <button className="App-btn" onClick={this.handleAdd}> Add to favourite</button>
                     </div>                    
                 )}
+
+                <div>
+                    <Link to="/" >back to list</Link>
+                </div>
             </div>
             
         )

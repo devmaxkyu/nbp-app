@@ -8,7 +8,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {refresh} from './actions'
 import {getCurrencyList, TABLE_FORMAT} from '../../services/nbpApi'
-import Table from '../../components/Table'
+import Table from '../../components/Table/currency'
 
 class CurrencyList extends React.Component {
     constructor(props){
@@ -49,6 +49,7 @@ class CurrencyList extends React.Component {
         
         return (
             <div>
+                <h2>Currency List</h2>
                 <div className="btn-group">
                     
                         <button className={this.state.table==TABLE_FORMAT.A?"App-btn-active":""} name="table_A" onClick={this.handleTableA}>

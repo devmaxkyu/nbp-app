@@ -5,13 +5,34 @@
  * */
 
 import React from 'react'
+import { connect } from 'react-redux'
+import FavouriteTalbe from  '../../components/Table/favourite'
+import {removeAllFavourite} from './actions'
 
 class Favourite extends React.Component {
+
+    handleRemove = () =>{
+        const {dispatch} = this.props
+        dispatch(removeAllFavourite())
+    }
+
     render() {
+        const {favourite} = this.props
+
         return (
-            <h1>Hello, {this.props.name}</h1>
+            <div>
+                <h2>Favourite List</h2>
+                <div>
+                        <a className={"App-link"} href="#" onClick={this.handleRemove}>
+                            All Remove Favourite                                                        
+                        </a>
+                </div>
+                <FavouriteTalbe items = {favourite.list} />
+            </div>
         )
     }
 }
 
-export default Favourite
+export default connect(state => ({
+    favourite: state.favourite
+}))(Favourite)

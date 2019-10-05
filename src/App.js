@@ -19,13 +19,16 @@ function App() {
         <Router>
             <Suspense fallback={<Loader/>}>
                 <Switch>
-                    <div className="App">                           
-                        <Header/>
-                        {/* setting routes */}
-                        <Route exact path="/" component={CurrencyList}/>
-                        <Route path="/currency/:table/:code" component={CurrencyDetail}/>                        
-                        <Route path="/favourite" component={Favourite}/>
+                    <div align = "center">
+                        <div className="App">                           
+                            <Header/>
+                            {/* setting routes */}
+                            <Route exact path="/" component={CurrencyList}/>
+                            <Route path="/currency/:table/:code" component={CurrencyDetail}/>                        
+                            <Route path="/favourite" component={Favourite}/>
+                        </div>
                     </div>
+                    
                 </Switch>
             </Suspense>
         </Router>

@@ -1,3 +1,4 @@
+
 .App {
   /* text-align: center; */
   background-color: white;
@@ -8,7 +9,10 @@
   /* justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: black;
+  width: 60%;
 }
+
+
 
 .App-loader {
   background-color: white;
@@ -37,16 +41,29 @@
   padding: 20px 10px;
 }
 
-/* Style the App-header links */
-.App-header a.link {
-  float: left;
+/* Style the  links */
+.App-link {
+  
+  background-color: white;
   color: black;
+  border: 2px solid #4CAF50;
+  padding: 10px 20px;
   text-align: center;
-  padding: 12px;
   text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 4px;
+  display: inline-block;
+  font-size: 16px;
+  
+
+}
+
+ul.App-nav li{
+    display: inline;
+    margin: 5px;
+}
+
+.App-link:hover {
+  background-color: #4CAF50;
+  color:white;
 }
 
 /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the App-header to increase when the font gets bigger */
@@ -55,23 +72,8 @@
   font-weight: bold;
 }
 
-/* Style the active/current link*/
-.App-header a.active {
-  color: #09d3ac;
-  float: left;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 4px;
-}
 
-/* Change the background color on mouse-over */
-.App-header a.link:hover {
-  background-color: #ddd;
-  color: black;
-}
+
 
 
 
@@ -107,9 +109,9 @@
 
 /* button group style */
 .btn-group button {
-  background-color: #4CAF50; /* Green background */
+  background-color: white; /* Green background */
   border: 1px solid green; /* Green border */
-  color: white; /* White text */
+  color: green; /* White text */
   padding: 10px 24px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
@@ -128,10 +130,12 @@
 
 /* Add a background color on hover */
 .btn-group button:hover {
-  background-color: #3e8e41;
+  background-color: #4CAF50;
+  
 }
 .btn-group button.App-btn-active {
-  background: black;
+  background:#4CAF50;
+  color:white;
 }
 
 /* end button group */
@@ -147,7 +151,15 @@
   font-size: 16px;
 }
 
+
+
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 800px) {
+  .App{
+    width: 80%;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .App-header a {
     float: none;
@@ -156,5 +168,9 @@
   }
   .App-header-right {
     float: none;
+  }
+
+  .App{
+    width: 100%;
   }
 }

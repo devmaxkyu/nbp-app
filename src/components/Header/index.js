@@ -7,8 +7,10 @@
 import React from 'react'
 
 import logo from './logo.svg';
+import { Link } from 'react-router-dom'
 
 class Header extends React.Component {
+
     render() {
         return (
             <div class="App-header">
@@ -16,8 +18,21 @@ class Header extends React.Component {
                     <img src={logo} className="App-logo" alt="logo" />                   
                 </a>
                 <div class="App-header-right">
-                    <a class="active" href="/">Currency List</a>
-                    <a class="link" href="/favourite">Favourite</a>                    
+                    <ul className="App-nav">
+                        <li>
+                            <Link to="/" className="App-link">
+                                Currency List
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/favourite" className="App-link">
+                                Favourite List
+                            </Link>
+                        </li>
+                    </ul>
+                    
+
+    `                                                            
                 </div>
             </div>          
         )

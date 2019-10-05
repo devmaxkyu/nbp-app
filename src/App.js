@@ -1,33 +1,30 @@
-import React from 'react';
+import React, {Suspense, lazy} from 'react';
 import { Provider } from 'react-redux'
+import { BrowserRouter as Router, Switch,Route} from 'react-router-dom'
 import store from './store'
-import routes from './routes'
-import logo from './logo.svg';
+import Routes from './routes'
+
 import './App.css';
+
+// loading Components 
+import Header from './components/Header'
+import Loader from './components/Loader'
+const CurrencyDetail = lazy(()=> import('./pages/CurrencyDetail')) 
+const CurrencyList = lazy(()=> import('./pages/CurrencyList'))  
+const Favourite = lazy(()=>import('./pages/Favourite')) 
 
 function App() {
   return (
     <Provider store = {store}>
         <Router>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loader/>}>
                 <Switch>
-                    <div className="App">
-                        <header className="App-header">
-                          <img src={logo} className="App-logo" alt="logo" />
-                          <p>
-                            Edit <code>src/App.js</code> and save to reload.
-                          </p>
-                          <a
-                            className="App-link"
-                            href="https://reactjs.org"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Learn React
-                          </a>
-                        </header>
-
-                        {routes}
+                    <div className="App">                           
+                        <Header/>
+                        {/* setting routes */}
+                        <Route exact path="/" component={CurrencyList}/>
+                        <Route path="/currency/:table/:code" component={CurrencyDetail}/>                        
+                        <Route path="/favourite" component={Favourite}/>
                     </div>
                 </Switch>
             </Suspense>

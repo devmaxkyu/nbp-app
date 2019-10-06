@@ -6,22 +6,19 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
-import {refresh} from './actions'
+import {refresh, table} from './actions'
 import {getCurrencyList, TABLE_FORMAT} from '../../services/nbpApi'
 import Table from '../../components/Table/currency'
 
 
 class CurrencyList extends React.Component {
     constructor(props){
-        super(props)
-        this.state = {table: TABLE_FORMAT.A}
+        super(props)        
     }
 
     componentDidMount(){
-        if(!this.props.currencies.length){
-            
-            getCurrencyList(TABLE_FORMAT.A, this.setCurrencies)
-            this.setState({table:TABLE_FORMAT.A})
+        if(!this.props.currencies.length){                        
+            getCurrencyList(this.props.table, this.setCurrencies)            
         }
     }
 
@@ -32,19 +29,23 @@ class CurrencyList extends React.Component {
         dispatch(refresh(result[0].rates))        
     }
 
+    
     handleTableA = () => {
-        getCurrencyList(TABLE_FORMAT.A, this.setCurrencies)
-        this.setState({table:TABLE_FORMAT.A})
+        const {dispatch} = this.props
+        dispatch(table(TABLE_FORMAT.A))        
+        getCurrencyList(TABLE_FORMAT.A, this.setCurrencies)        
     }
 
     handleTableB = () => {
+        const {dispatch} = this.props
+        dispatch(table(TABLE_FORMAT.B))
         getCurrencyList(TABLE_FORMAT.B, this.setCurrencies)
-        this.setState({table:TABLE_FORMAT.B})
     }
 
     handleTableC = () => {
+        const {dispatch} = this.props
+        dispatch(table(TABLE_FORMAT.C))
         getCurrencyList(TABLE_FORMAT.C, this.setCurrencies)
-        this.setState({table:TABLE_FORMAT.C})
     }
     render() {
         
@@ -53,10 +54,10 @@ class CurrencyList extends React.Component {
                 <h3>Currency List</h3>
                 <div className="btn-group">
                     
-                        <button className={"App-link "+(this.state.table==TABLE_FORMAT.A?"active":"")} name="table_A" onClick={this.handleTableA}>
+                        <button className={"App-link "+(this.props.table==TABLE_FORMAT.A?"active":"")} name="table_A" onClick={this.handleTableA}>
                             Table {TABLE_FORMAT.A}                                                        
                         </button>
-                        <button className={"App-link "+(this.state.table==TABLE_FORMAT.B?"active":"")} name="table_B" onClick={this.handleTableB}>
+                        <button className={"App-link "+(this.props.table==TABLE_FORMAT.B?"active":"")} name="table_B" onClick={this.handleTableB}>
                             Table {TABLE_FORMAT.B}                                                        
                         </button>
                         {/* <button className={this.state.table==TABLE_FORMAT.C?"":"App-btn App-btn-active"} name="table_C" onClick={this.handleTableC}>
@@ -65,7 +66,7 @@ class CurrencyList extends React.Component {
                     
                 </div>                
                 <div className="table-wrap">
-                    <Table items = {this.props.currencies} table = {this.state.table} />
+                    <Table items = {this.props.currencies} table = {this.props.table} />
                 </div>
                 
             </div>
@@ -75,5 +76,6 @@ class CurrencyList extends React.Component {
 
 
 export default connect(state => ({
-    currencies: state.currencyList.list
+    currencies: state.currencyList.list,
+    table: state.currencyList.table
 }))(CurrencyList)

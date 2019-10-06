@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Currency List rendering 1`] = `
+<div>
+  <h3>
+    Currency List
+  </h3>
+  <div
+    className="btn-group"
+  >
+    <button
+      className="App-link active"
+      name="table_A"
+      onClick={[Function]}
+    >
+      Table 
+      A
+    </button>
+    <button
+      className="App-link "
+      name="table_B"
+      onClick={[Function]}
+    >
+      Table 
+      B
+    </button>
+  </div>
+  <div
+    className="table-wrap"
+  >
+    <table
+      className="App-table"
+    >
+      <tr>
+        <th>
+          Currency Name
+        </th>
+        <th>
+          Currency Value
+        </th>
+      </tr>
+      <tr>
+        <td
+          colSpan="2"
+        >
+          No items, yay!
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+`;

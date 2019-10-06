@@ -1,3 +1,5 @@
+import { request } from "http"
+
 /** 
  * @author Zemin W.
  * @description define NBP api functions
@@ -7,6 +9,7 @@
 const apiBaseUrl = 'http://api.nbp.pl/api/exchangerates/'
 
 const ajaxRequest = (url, callback, method = 'get') =>{
+
     fetch(url, {
         method: method, 
         headers:{ 
@@ -24,6 +27,8 @@ const ajaxRequest = (url, callback, method = 'get') =>{
             alert(error)
         }
     )
+
+    
 }
 
 export const TABLE_FORMAT = {A:'A',B:'B',C:'C'}

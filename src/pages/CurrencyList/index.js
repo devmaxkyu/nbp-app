@@ -10,6 +10,7 @@ import {refresh} from './actions'
 import {getCurrencyList, TABLE_FORMAT} from '../../services/nbpApi'
 import Table from '../../components/Table/currency'
 
+
 class CurrencyList extends React.Component {
     constructor(props){
         super(props)

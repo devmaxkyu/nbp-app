@@ -2,7 +2,6 @@ import React, {Suspense, lazy} from 'react';
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Switch,Route} from 'react-router-dom'
 import store from './store'
-import Routes from './routes'
 
 import './App.css';
 

@@ -12,6 +12,7 @@ import {setCurrencyDetail} from './actions'
 import {addFavourite, removeFavourite} from '../Favourite/actions'
 import { ENGINE_METHOD_NONE } from 'constants'
 import {Link} from 'react-router-dom'
+import _ from 'lodash'
 
 class CurrencyDetail extends React.Component {
     constructor(props){
@@ -53,23 +54,13 @@ class CurrencyDetail extends React.Component {
     }
 
     render() {
+
         const {currency: detail,favourite: {list: favouriteList}} = this.props
-
-        var isFavourite = false
-
         if(!this.state.loaded){
             return (<p>no detail data</p>)
         }
-
         // check if currency exists in favourite list
-        for(let item of favouriteList){
-            if(item.code == detail.code)
-            {
-                // if currency is exists
-                isFavourite = true
-                break
-            }
-        }            
+        const isFavourite = _.find(favouriteList, item => item.code === detail.code)
         
         return (
             <div className="App-detail">

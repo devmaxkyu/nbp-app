@@ -20,7 +20,8 @@ export const addFavourite = data => ({
 })
 
 export const removeFavourite = data => ({
-    type: REMOVE_FAVOURITE
+    type: REMOVE_FAVOURITE,
+    data
 })
 
 export const removeAllFavourite = data =>({

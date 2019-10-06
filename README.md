@@ -41,7 +41,6 @@ npm test
 * [Jest](https://facebook.github.io/jest/) - Test framework
 * [Redux](https://redux.js.org/) - Test framework
 * [StandardJS](https://standardjs.com/) - Awesome linter and formatter
-* [Material-UI](https://www.material-ui.com/#/) - React components that implement Material Design
 * [Webpack](https://webpack.js.org/) - Module bundler
 * [NPM](https://www.npmjs.com/) - Package Manager
 

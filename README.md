@@ -28,11 +28,19 @@ npm start
 
 Then you can check it on web browser by default on localhost:3000
 
+## Running the tests
 
+Tests uses Jest test framework
+
+You can run them using:
+```
+npm run test
+```
 
 ## Built With
 
 * [React](http://www.dropwizard.io/1.0.2/docs/) - User interface library
+* [Jest](https://facebook.github.io/jest/) - Test Framework
 * [Redux](https://redux.js.org/) - User data library
 * [NPM](https://www.npmjs.com/) - Package Manager
 

@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Currency Detail rendering 1`] = `
+<div
+  className="App-detail"
+>
+  <div>
+    <h4>
+      afgani (Afganistan)
+    </h4>
+    <p>
+      <small>
+        AFN
+      </small>
+    </p>
+    <div
+      className="attr"
+    >
+      <div>
+        <span
+          className="label"
+        >
+          Effective Date
+        </span>
+        <span>
+          2019-10-09
+        </span>
+      </div>
+      <div>
+        <span
+          className="label"
+        >
+          Number
+        </span>
+        <span>
+          041/B/NBP/2019
+        </span>
+      </div>
+      <div>
+        <span
+          className="label"
+        >
+          Rate
+        </span>
+        <span>
+          0.050396
+        </span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button
+      className="App-btn"
+      onClick={[Function]}
+    >
+       Add to favourite
+    </button>
+  </div>
+  <div>
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      back to list
+    </a>
+  </div>
+</div>
+`;

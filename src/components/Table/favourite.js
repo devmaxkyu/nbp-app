@@ -23,7 +23,7 @@ class FavouriteTable extends React.Component {
                 <tbody>
                     {items && items.length ? items.map((item, index) => {
                             return (
-                                <tr id={item.code}>                                    
+                                <tr id={item.code} key={item.code}>                                    
                                     <td>
                                     
                                             <Link to={`currency/${item.table}/${item.code}`} >{item.currency}</Link>

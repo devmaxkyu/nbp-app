@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favourite rendering 1`] = `
+<div>
+  <h3>
+    Favourite List
+  </h3>
+  <div
+    className="App-btn-group"
+  >
+    <a
+      className="App-link"
+      href="#"
+      onClick={[Function]}
+    >
+      All Remove Favourite
+    </a>
+  </div>
+  <div
+    className="table-wrap"
+  >
+    <table
+      className="App-table"
+    >
+      <thead>
+        <tr>
+          <th>
+            Currency Name
+          </th>
+          <th>
+            Currency Value
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            colSpan="2"
+          >
+            No Favourite items, yay!
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

@@ -14,21 +14,31 @@ class FavouriteTable extends React.Component {
 
         return (
             <table className="App-table">
-                <tr>
-                    <th>Currency Name</th>
-                    <th>Currency Value</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Currency Name</th>
+                        <th>Currency Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {items && items.length ? items.map((item, index) => {
+                            return (
+                                <tr id={item.code}>                                    
+                                    <td>
+                                    
+                                            <Link to={`currency/${item.table}/${item.code}`} >{item.currency}</Link>
+                                       
+                                        
+                                    </td>
+                                    <td>{item.rates[0].mid}</td>
+                                </tr>
+                            );
+                        })
+                        :<tr><td colSpan="2">No Favourite items, yay!</td></tr>
+                    }
+                </tbody>
 
-                {items && items.length ? items.map((item, index) => {
-                        return (
-                            <tr id={item.code}>                                    
-                                <td><Link to={`currency/${item.table}/${item.code}`} >{item.currency}</Link></td>
-                                <td>{item.rates[0].mid}</td>
-                            </tr>
-                        );
-                    })
-                    :<tr><td colSpan="2">No Favourite items, yay!</td></tr>
-                }
+                
             </table>
                                                       
         )

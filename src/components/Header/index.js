@@ -13,24 +13,32 @@ class Header extends React.Component {
 
     render() {
         return (
-            <div class="App-header">
+            <div className="App-header">
                 <div className="App-logo">
-                    <Link to="/">
-                        <img src={logo} className="App-logo-img" alt="logo" />                   
-                    </Link>
+          
+                        <Link to="/">
+                            <img src={logo} className="App-logo-img" alt="logo" />                   
+                        </Link>
+                  
+                    
                 </div>
                 <h2>Frontend Practical Assignment</h2>
-                <div class="App-header-right">
+                <div className="App-header-right">
                     <ul className="App-nav">
                         <li>
-                            <Link to="/" className="App-link">
-                                Currency List
-                            </Link>
+                         
+                                <Link to="/" className="App-link">
+                                    Currency List
+                                </Link>
+                          
                         </li>
                         <li>
-                            <Link to="/favourite" className="App-link">
-                                Favourite List
-                            </Link>
+                            
+                          
+                                <Link to="/favourite" className="App-link">
+                                    Favourite List
+                                </Link>
+                            
                         </li>
                     </ul>
                     

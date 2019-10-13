@@ -8,6 +8,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import FavouriteTalbe from  '../../components/Table/favourite'
 import {removeAllFavourite} from './actions'
+import ErrorBoundary from '../../components/Error'
 
 class Favourite extends React.Component {
 
@@ -28,7 +29,9 @@ class Favourite extends React.Component {
                         </a>
                 </div>
                 <div className="table-wrap">
-                <FavouriteTalbe items = {favourite.list} />
+                    <ErrorBoundary>
+                            <FavouriteTalbe items = {favourite.list} />
+                    </ErrorBoundary>                
                 </div>
                 
             </div>

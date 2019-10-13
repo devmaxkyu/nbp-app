@@ -9,6 +9,7 @@ import { connect } from 'react-redux'
 import {refresh, table} from './actions'
 import {getCurrencyList, TABLE_FORMAT} from '../../services/nbpApi'
 import Table from '../../components/Table/currency'
+import ErrorBoundary from '../../components/Error'
 
 
 class CurrencyList extends React.Component {
@@ -24,7 +25,7 @@ class CurrencyList extends React.Component {
 
     setCurrencies = (result) => {
         const {dispatch} = this.props
-        console.log('CurrencyList.index.setCurrencies',result);
+        //console.log('CurrencyList.index.setCurrencies',result);
         
         dispatch(refresh(result[0].rates))        
     }
@@ -66,7 +67,9 @@ class CurrencyList extends React.Component {
                     
                 </div>                
                 <div className="table-wrap">
-                    <Table items = {this.props.currencies} table = {this.props.table} />
+                    <ErrorBoundary>
+                        <Table items = {this.props.currencies} table = {this.props.table} />
+                    </ErrorBoundary>
                 </div>
                 
             </div>

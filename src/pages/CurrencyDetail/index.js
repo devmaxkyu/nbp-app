@@ -30,7 +30,7 @@ class CurrencyDetail extends React.Component {
         const {             
             match:{params:{code, table}}            
         } = this.props
-        console.log('CurrencyDetail.componentDidMount', code, table)
+        //console.log('CurrencyDetail.componentDidMount', code, table)
         // get details using api function
         getCurrencyDetail(table, code, this.setCurrency)        
     }
@@ -97,7 +97,10 @@ class CurrencyDetail extends React.Component {
                 )}
 
                 <div>
-                    <Link to="/" >back to list</Link>
+                   
+                        <Link to="/" >back to list</Link>
+                
+                    
                 </div>
             </div>
             

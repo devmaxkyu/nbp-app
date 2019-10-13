@@ -1,4 +1,4 @@
-import { request } from "http"
+
 import axios from 'axios'
 /** 
  * @author Zemin W.
@@ -19,7 +19,7 @@ const ajaxRequest = (url, callback, method = 'get') =>{
     })
     .then(function (response) {
         // handle success
-        console.log(response);
+        //console.log(response);
         callback(response.data)
     })
     .catch(function (error) {
@@ -27,27 +27,7 @@ const ajaxRequest = (url, callback, method = 'get') =>{
         console.error('services.nbpApi.ajaxRequest', error)
         alert(error)        
     })
-    .finally(function () {
-    // always executed
-    })
-    // fetch(url, {
-    //     method: method, 
-    //     headers:{ 
-    //         'Accept': 'application/json', 
-            
-    //     }
-    // }).then(res => res.json())
-    // .then(
-    //     (result) => {
-    //         callback(result)
-    //     },
-    //     // handle errors
-    //     (error) => {
-            
-    //     }
-    // )
-
-    
+   
 }
 
 export const TABLE_FORMAT = {A:'A',B:'B',C:'C'}

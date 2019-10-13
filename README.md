@@ -34,7 +34,7 @@ Tests uses Jest test framework
 
 You can run them using:
 ```
-npm run test
+npm test
 ```
 
 ## Built With
